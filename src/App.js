@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import Header from './Header'
 import Button from './Button'
@@ -7,11 +8,11 @@ import AddThingButton from './AddThingButton'
 import base from'./base'
 
 class App extends Component {
-  ComponentWillMount(){
+  componentWillMount(){
     this.ref = base.syncState(
       'things',
       {
-        content:this,
+        context: this,
         state:'things'
       }
     )
@@ -26,6 +27,7 @@ class App extends Component {
     return {
       id: `thing-${Date.now()}`,
       name: '',
+      checked: false,
     }
   }
 
@@ -47,10 +49,17 @@ class App extends Component {
     this.setState({ things })
   }
 
+  checkedThing=(thing)=>{
+    const things = {...this.state.things}
+    things[thing.id].checked = !things[thing.id].checked
+    this.setState({ things })
+  }
+
   render() {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
+      checkedThing: this.checkedThing,
     }
     return (
       <div className="App">
@@ -58,8 +67,8 @@ class App extends Component {
         <Button/>
         <AddThingButton addThing={this.addThing} />
         <ThingList 
-        things={this.state.things}
-        {...actions}
+          things={this.state.things}
+          {...actions}
         />
       </div>
     );
