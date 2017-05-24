@@ -1,7 +1,5 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
 
-
-
 button.logout {
   cursor: pointer;
   background-color: transparent;
@@ -11,13 +9,4 @@ button.logout {
   font-family: 'helvetica neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
-}
-input.type {
-    margin: 15px auto;
-    border-radius: 5px;
-    width: 400px;
-    display: block;
-    font-family: 'helvetica neue', sans-serif;
-    font-size: 20px;
-    font-weight: 200;    
 }
