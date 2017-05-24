@@ -1,16 +1,16 @@
 import React from 'react'
 import'./Actions.css'
+
 const Actions = ({ thing, removeThing }) => {
     return(
-
-<span className="Actions">
-          <button 
-          className="remove"
-          onClick={() =>removeThing(thing)}
-          >
+        <span className="Actions">
+            <button 
+            className="remove"
+            onClick={() =>removeThing(thing)}
+            >
             <i className="fa fa-trash-o"></i>
-          </button>
+            </button>
         </span>
-        )
+    )
 }
 export default Actions

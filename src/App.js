@@ -4,8 +4,19 @@ import Header from './Header'
 import Button from './Button'
 import ThingList from './ThingList'
 import AddThingButton from './AddThingButton'
+import base from'./base'
 
 class App extends Component {
+  ComponentWillMount(){
+    this.ref = base.syncState(
+      'things',
+      {
+        content:this,
+        state:'things'
+      }
+    )
+  }
+
   state = {
     things: {}
   }
@@ -32,7 +43,7 @@ class App extends Component {
 
   removeThing = (thing) => {
     const things = {...this.state.things}
-    delete things[thing.id]
+    things[thing.id] = null
     this.setState({ things })
   }
 
