@@ -29,3 +29,12 @@ button.logout {
   font-size: 20px;
   font-weight: 200;
 }
+input.type {
+    margin: 15px auto;
+    border-radius: 5px;
+    width: 400px;
+    display: block;
+    font-family: 'helvetica neue', sans-serif;
+    font-size: 20px;
+    font-weight: 200;    
+}

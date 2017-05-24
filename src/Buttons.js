@@ -5,7 +5,10 @@ class Buttons extends Component{
  render() {
   return (
       <div>
-     <button className="logout">Sign Out</button>
+      <button className="logout">Sign Out</button>
+      <div>
+      <input className="type" type= "text" placeholder="Enter a thing."/>
+      </div>
       <button className="add-thing">Add Thing</button>
       </div>
      );
