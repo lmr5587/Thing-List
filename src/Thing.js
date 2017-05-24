@@ -43,6 +43,7 @@ class Thing extends Component {
           />
           <Actions thing={thing} removeThing={removeThing} />
         </div>
+        <input className= 'date' type="date"/>
       </li>
     )
   }

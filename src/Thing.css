@@ -44,3 +44,7 @@ input[type="checkbox"] {
       flex: 1 1 0%;
 }
 
+.Thing .date {
+margin: 5px;
+border: 0px;
+}
