@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header'
-import Buttons from './Buttons'
+import Button from './Button'
 import ThingList from './ThingList'
 import AddThingButton from './AddThingButton'
 
@@ -44,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Buttons/>
+        <Button/>
         <AddThingButton addThing={this.addThing} />
         <ThingList 
         things={this.state.things}

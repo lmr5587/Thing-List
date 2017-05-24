@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './Buttons.css'
+import './Button.css'
 
-class Buttons extends Component{
+class Button extends Component{
 
  render() {
   return <button className="logout">Sign Out</button>
   }
 }
 
-export default Buttons
+export default Button

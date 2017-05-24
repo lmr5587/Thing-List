@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ContentEditable from 'react-contenteditable'
 import './Thing.css'
+import Actions from './Actions'
 
-const Thing = ({ thing ,saveThing, removeThing}) => {
-  const updateName = (ev) => {
+class Thing extends Component {
+  ComponentDidMount(){
+    this.nameInput.htmlEl.focus()
+  }
+   updateName = (ev) => {
+     const { thing, saveThing }=this.props
     thing.name = ev.target.value
     saveThing(thing)
   }
+  saveOnEnter =(ev)=>{
+    if(ev.key===Enter){
+      ev.preventDefault()
+      ev.target.blur()
+    }
+  }
+  render(){
+     const { thing, removeThing }=this.props
+  
   return (
     <li className="Thing">
       <input type="checkbox" value="on" />
@@ -14,19 +28,15 @@ const Thing = ({ thing ,saveThing, removeThing}) => {
         <ContentEditable
         className="name"
         html={thing.name}
-        onChange={updateName}
+        onChange={this. updateName}
+        onKeyPress={this.saveOnEnter}
+        ref={input => this.nameInput=input}
         />
-        <span className="actions">
-          <button 
-          className="remove"
-          onClick={() =>removeThing(thing)}
-          >
-            <i className="fa fa-trash-o"></i>
-          </button>
-        </span>
+       <Actions thing={thing} removeThing={removeThing} />
       </div>
     </li>
   )
+}
 }
 
 export default Thing
