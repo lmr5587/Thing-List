@@ -18,7 +18,7 @@ input:checked + .details {
 }
 
 input[type="checkbox"] {
-  margin: 20px;
+  margin: 15px;
 }
 
 .Thing .details {
