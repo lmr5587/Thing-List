@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Header from './Header'
-import Button from './Button'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
 import ThingList from './ThingList'
 import AddThingButton from './AddThingButton'
 import base from'./base'
@@ -65,7 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Button/>
+        <SignIn/>
         <AddThingButton addThing={this.addThing} />
         <ThingList 
           things={this.state.things}

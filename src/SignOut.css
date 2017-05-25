@@ -1,6 +1,4 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
-
-button.logout {
+.SignOut {
   cursor: pointer;
   background-color: transparent;
   border: 0;
